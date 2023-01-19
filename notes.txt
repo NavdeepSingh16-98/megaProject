@@ -15,3 +15,7 @@ search mongoose hooks
 - do not use arrow function in schema because we have to refer the password field of userSchema using this.password
 
 mongoose give us modified function to check if filed is mofified
+
+mongoose schema methods - functionality in schema - similar to inject/make prototypes
+
+secret and expiry time should come from .env therefore '-bad
