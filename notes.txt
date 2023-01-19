@@ -1,0 +1,7 @@
+regexr.com - email address validator
+
+always trim in controller only
+select:false - whenever you will make a database query, this will not come
+
+but how we will get password
+serach - mongoose enum
