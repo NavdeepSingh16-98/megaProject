@@ -5,3 +5,13 @@ select:false - whenever you will make a database query, this will not come
 
 but how we will get password
 serach - mongoose enum
+
+//crypto is a default node js library
+
+// challenge - we want to encrypt password
+
+search mongoose hooks
+- pre hook
+- do not use arrow function in schema because we have to refer the password field of userSchema using this.password
+
+mongoose give us modified function to check if filed is mofified
