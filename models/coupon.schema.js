@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 const couponSchema =  mongoose.Schema({
 
-    code:{
+    name:{
         type:String,
         required:[true,'Please provide a coupon name']
     },
