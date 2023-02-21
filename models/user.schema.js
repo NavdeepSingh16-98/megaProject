@@ -31,7 +31,7 @@ const userSchema = mongoose.Schema(
         enum:Object.values(AuthRoles),
         default:AuthRoles.USER
     },
-    forgotPasswodToken:String,
+    forgotPasswordToken:String,
     forgotPasswordExpiry:Date
 },
 {
@@ -76,7 +76,7 @@ config.JWT_SECRET,
         const forgotToken = crypto.randomBytes(20).toString('hex');
 
         //step1 - save to DB 
-        this.forgotPasswodToken = crypto.createHash("sha256").update(forgotToken).digest("hex")
+        this.forgotPasswordToken = crypto.createHash("sha256").update(forgotToken).digest("hex")
 
         this.forgotPasswordExpiry = Date.now() + 20 * 60 * 1000
         //step2 - return values to user
