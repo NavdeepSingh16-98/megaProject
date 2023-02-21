@@ -8,8 +8,8 @@ import CustomError from '../utils/customError';
 import config from '../config/config.js';
 import { request } from 'express';
 
-
-export const isLoggedIn = asyncHandler(async(req,res,next)=>{
+// '_req' is only a precautionary step
+export const isLoggedIn = asyncHandler(async(req,_res,next)=>{
 
     let token;
 

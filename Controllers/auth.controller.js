@@ -239,3 +239,26 @@ user.forgotPasswordToken = undefined;
 
 //TODO:create a controller for change password
 
+/********************************* 
+
+* @GET_PROFILE
+* @REQUEST_TYPE GET
+* @route http://localhost:4000/api/auth/profile
+* @description check for token and populate req.user
+* @parameters  
+* @return User Object
+
+************************************/
+
+export const getProfile = asyncHandler(async(req,res)=>{
+
+    const {user} = req;
+    if(!user){
+        throw new CustomError('User not found',404);
+    }
+    res.status(400).json({
+        success:true,
+        user
+    })
+}) 
+
