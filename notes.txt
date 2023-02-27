@@ -19,3 +19,20 @@ mongoose give us modified function to check if filed is mofified
 mongoose schema methods - functionality in schema - similar to inject/make prototypes
 
 secret and expiry time should come from .env therefore '-bad
+
+
+to handle images we will use aws -
+
+npm package - formidable
+
+also refer - pro backend course- fileUpload section has explained in depth
+
+****while working with aws always refer -
+
+aws access key 
+aws secret
+
+also there is an option for region as well 
+
+
+
