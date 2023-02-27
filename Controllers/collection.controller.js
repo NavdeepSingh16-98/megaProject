@@ -69,7 +69,58 @@ let updatedCollection = Collection.findByIdAndUpdate(collectionId,{name},{
 runValidators:true
 })
 
+if(!updatedCollection){
+    throw new CustomError("Collection not found",400);
+}
 
+// send response to frontend
+
+res.status(200).json({
+    success:true,
+    message:"Collection updated successfully",
+    updatedCollection
+})
 
 })
 
+export const deleteCollection = asyncHandler(async(req,res)=>{
+
+    const {id:collectionId} = req.params;
+
+    const collectionToDelete = await Collection.findByIdAndDelete(collectionId);
+
+    if(!collectionToDelete){
+        throw new CustomError('Collection not found',400);
+    }
+
+    collectionToDelete.remove();
+
+    res.status(200).json({
+        success:true,
+        message:"Collection deleted successfully",
+        
+    })
+})
+/********************************* 
+
+* @GetAll_COLLECTION 
+* @route http://localhost:4000/api/collection/all
+* @description  controller for getting all collections
+* @parameters 
+* @return array of all collections
+
+************************************/
+
+export const getAllCollections = asyncHandler(async(req,res)=>{
+
+   const collections =  await Collection.find();
+
+   if(!collections){
+    throw new CustomError("No Collection Found",400);
+   }
+
+   res.status(200).json({
+    success:true,
+    collections
+   })
+})
