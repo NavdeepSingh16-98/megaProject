@@ -35,4 +35,10 @@ aws secret
 also there is an option for region as well 
 
 
+in portal - in probackend - see form upload and image upload
+
+
+
+mongoose is limit to one point, then we have mongodb , especially we have mongodb aggregation pipeline
+
 
